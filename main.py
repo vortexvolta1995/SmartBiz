@@ -1,12 +1,13 @@
-from app.produits import ajouter_produit, lister_produits, rechercher_produit
+from app.produits import ajouter_produits, lister_produits, rechercher_produits, supprimer_produits
 
 
 def afficher_menu():
-    print("\n===SmartBiz ERP V0.2===")
+    print("\n===SmartBiz ERP V0.5===")
     print("1. Ajouter un produit")
     print("2. Lister les produits")
     print("3. Rechercher un produit")
-    print("Quitter")
+    print("4. Supprimer un produit")
+    print("5. Quitter")
     return input("Votre choix : ")
 
 def main():
@@ -17,12 +18,7 @@ def main():
             nom=input("Nom du produit : ")
             prix=input("Prix (FCFA) : ")
 
-            #Conversion du prix en nombre avec gestion d'erreur
-            try:
-                prix=float(prix)
-                ajouter_produit(nom, prix)
-            except ValueError :
-                print("Le prix doit etre un nombre valide.")
+            ajouter_produits(nom, prix)
         
         elif choix=="2":
             lister_produits()
@@ -30,9 +26,14 @@ def main():
         elif choix=="3":
             print("\n---Recherche d'un produit---")
             nom=input("Nom a rechercher : ")
-            rechercher_produit(nom)
+            rechercher_produits(nom)
 
         elif choix=="4":
+            print("\n---Suppression d'un produit---")
+            nom=input("Nom du produit a supprimer : ")
+            supprimer_produits(nom)
+
+        elif choix=="5":
             print("Au revoir !")
             break
 

@@ -1,10 +1,10 @@
 [
     {
-        "nom": "LAIT",
+        "nom": "SAC",
         "prix": 1000.0
     },
     {
-        "nom": "T-SHIRT",
-        "prix": 1000.0
+        "nom": "LIT",
+        "prix": 10000.0
     }
 ]
